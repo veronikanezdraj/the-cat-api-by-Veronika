@@ -1,0 +1,47 @@
+.voteWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.buttonWrapper {
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.buttonLike {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: rgb(7, 152, 60);
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+}
+.buttonLike:hover {
+  cursor: pointer;
+}
+
+.buttonDis {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(192, 38, 136);
+  color: black;
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid black;
+}
+.buttonDis:hover {
+  cursor: pointer;
+}
+
+.imageWrapper img {
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+}

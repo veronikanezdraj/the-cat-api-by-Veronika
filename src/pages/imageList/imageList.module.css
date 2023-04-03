@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  width: 500px;
+  height: 800px;
+  flex-wrap: wrap;
+}
+
+.drop_box {
+  width: 600px;
+  padding: 20px;
+}
+
+.label {
+  font-size: small;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande';
+  color: gray;
+}
+
+.drop {
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 200px;
+  height: 50px;
+  color: rgb(2, 2, 2);
+  border-top: 0px;
+  border-left: 0px;
+  border-right: 0px;
+  font-size: medium;
+  font-family: Verdana, Tahoma;
+}
+
+.img {
+  display: inline-flex;
+  justify-content: space-between;
+  height: 150px;
+  width: 150px;
+}
