@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/the-cat-api-by-Veronika/static/css/main.913c9e87.css",
+    "main.js": "/the-cat-api-by-Veronika/static/js/main.fd513ca3.js",
+    "index.html": "/the-cat-api-by-Veronika/index.html",
+    "main.913c9e87.css.map": "/the-cat-api-by-Veronika/static/css/main.913c9e87.css.map",
+    "main.fd513ca3.js.map": "/the-cat-api-by-Veronika/static/js/main.fd513ca3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.913c9e87.css",
+    "static/js/main.fd513ca3.js"
+  ]
+}
