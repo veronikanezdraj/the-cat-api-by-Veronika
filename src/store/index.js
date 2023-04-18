@@ -1,16 +1,9 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from "@reduxjs/toolkit";
 
-const voteReducer = (state = {}, action) => {
-  if (action.type === 'like') {
-    return {};
-  }
-  if (action.type === 'Dislike') {
-    return {};
-  }
-};
+import favReducer from "./FavSlice";
 
-const store = configureStore({
-  reducer: voteReducer,
+export default configureStore({
+  reducer: {
+    fav: favReducer,
+  },
 });
-
-export default store;

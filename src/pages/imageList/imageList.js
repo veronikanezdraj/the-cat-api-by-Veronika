@@ -1,25 +1,8 @@
-import { request } from '../../api';
-import { useEffect, useState } from 'react';
-import classes from './imageList.module.css';
-import Select from '../../components/Select';
-
-let limitArr = [
-  { name: 9, id: 9 },
-  { name: 18, id: 18 },
-  { name: 80, id: 80 },
-];
-let orderArr = [
-  { name: 'Random', id: 'random' },
-  { name: 'Desc', id: 'desc' },
-  { name: 'Asc', id: 'Asc' },
-];
-
-let typeArr = [
-  { name: 'All', id: 'All' },
-  { name: 'gif', id: 'gif' },
-  { name: 'jpg', id: 'jpg' },
-  { name: 'png', id: 'png' },
-];
+import { request } from "../../api";
+import { useEffect, useState } from "react";
+import classes from "./imageList.module.css";
+import Select from "../../components/Select";
+import { limitArr, typeArr, orderArr } from "../../config/selectConfig";
 
 const ImageSearch = () => {
   const [categoriesArr, setCategoriesArr] = useState([]);
@@ -39,10 +22,10 @@ const ImageSearch = () => {
 
   const [filtersState, setFiltersState] = useState({
     Limit: limitArr[0],
-    Type: '',
-    Order: '',
-    Breed: '',
-    Category: '',
+    Type: "",
+    Order: "",
+    Breed: "",
+    Category: "",
   });
 
   const getAllImg = async (filtersState) => {
@@ -55,12 +38,12 @@ const ImageSearch = () => {
   };
 
   const getCategories = async () => {
-    const response = await request('/categories');
+    const response = await request("/categories");
     setCategoriesArr(response);
   };
 
   const getBreeds = async () => {
-    const response = await request('/breeds');
+    const response = await request("/breeds");
     setBreedsArray(response);
   };
 
@@ -75,25 +58,15 @@ const ImageSearch = () => {
     }
   }, [breedsArray, categoriesArr, filtersState]);
 
-  // const handleChange = (event) => {
-  //   setState({ ...state, [event.target.name] :value});
-  // };
-
-  // const qwe = {
-  //   a: 1,
-  //   b: 2
-  // };
-
-  // const getValue = (key) => qwe[key];
-
-  // getValue('a');
-
   const filtersHandler = (value, type) => {
     setFiltersState((prevState) => {
       return { ...prevState, [type]: value };
     });
   };
 
+  // const handleChange = (event) => {
+  //   setState({ ...state, [event.target.name] :value});
+  // };
   // const breedHandler = (event) => {
   //   setSelectedBreed(event.target.value);
   // };
@@ -115,28 +88,28 @@ const ImageSearch = () => {
     <div className={classes.container}>
       <div className={classes.drop_box}>
         <Select
-          title={'Order'}
+          title={"Order"}
           value={filtersState.selectedOrder}
           selectHandler={filtersHandler}
           options={orderArr}
         />
 
         <Select
-          title={'Type'}
+          title={"Type"}
           value={filtersState.selectedType}
           selectHandler={filtersHandler}
           options={typeArr}
         />
 
         <Select
-          title={'Category'}
+          title={"Category"}
           value={filtersState.selectedCategory}
           selectHandler={filtersHandler}
           options={categoriesArr}
         />
 
         <Select
-          title={'Breed'}
+          title={"Breed"}
           value={filtersState.selectedBreed}
           selectHandler={filtersHandler}
           options={breedsArray}
@@ -157,7 +130,7 @@ const ImageSearch = () => {
         )}
       </div>
       <Select
-        title={'Page'}
+        title={"Page"}
         value={filtersState.selectedLimit}
         selectHandler={filtersHandler}
         options={limitArr}
@@ -175,14 +148,14 @@ export default ImageSearch;
 // 'space',
 // 'sunglasses',
 // 'ties',
-// // const sortOrder = (order, ascending) => {
-// //   return order.sort((desc, asc) => {
-// //     if (ascending) {
-// //       return desc.id > asc.id ? 1 : -1;
-// //     } else {
-// //       return desc.id < asc.id ? 1 : -1;
-// //     }
-// //   });
+// const sortOrder = (order, ascending) => {
+//   return order.sort((desc, asc) => {
+//     if (ascending) {
+//       return desc.id > asc.id ? 1 : -1;
+//     } else {
+//       return desc.id < asc.id ? 1 : -1;
+//     }
+//   });
 // };
 /* <label htmlFor="Breed" className={classes.label}>
 Breed

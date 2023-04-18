@@ -1,7 +1,7 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { routes } from './config/routes';
-import HeaderButtons from './components/HeaderButtons';
+import React from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
+import { routes } from "./config/routes";
+import HeaderButtons from "./components/HeaderButtons";
 
 export default function App() {
   return (

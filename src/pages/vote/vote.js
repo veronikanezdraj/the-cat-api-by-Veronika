@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import classes from "./vote.module.css";
 import { METHOD_TYPES, request } from "../../api/index";
 
+import FavoritesBtn from "../../components/FavoritesBtn/FavoritesBtn";
+import LoadingSpinner from "../../UI/LoadingSpinner";
+
 const valueTypes = {
   like: 1,
   dislike: 0,
@@ -30,9 +33,9 @@ const Vote = () => {
   useEffect(() => {
     getImage();
   }, []);
-
+  console.log(imageInfo);
   return loading ? (
-    <div>Loading...</div>
+    <LoadingSpinner />
   ) : (
     <div className={classes.voteWrapper}>
       <div className={classes.buttonWrapper}>
@@ -51,6 +54,9 @@ const Vote = () => {
       </div>
       <div className={classes.imageWrapper}>
         <img src={imageInfo.url} alt="cat" />
+        <div>
+          <FavoritesBtn image_id={imageInfo.id} url={imageInfo.url} />
+        </div>
       </div>
     </div>
   );

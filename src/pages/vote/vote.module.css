@@ -40,6 +40,11 @@
   cursor: pointer;
 }
 
+.buttonFav {
+  width: 500px;
+  height: 50px;
+}
+
 .imageWrapper img {
   width: 500px;
   height: 500px;
